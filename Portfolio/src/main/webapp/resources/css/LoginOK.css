@@ -1,0 +1,64 @@
+@CHARSET "UTF-8";
+
+#loginOKImg{
+	width: 50px;
+	height: 50px;
+}
+
+.loginInput{
+	width: 176px;
+}
+
+#doJoin, #findPage, .loginOKBtn{
+	background-color: #1565C0;
+	border: none;
+	color: white;
+	box-shadow: 2px 2px 2px black;
+	font-weight: 900;
+}
+
+#doLogin{
+	background-color: #1565C0;
+	border: none;
+	color: white;
+	box-shadow: 2px 2px 2px black;
+	font-weight: 900;
+	width: 56px;
+	height: 74px;
+}
+
+.joinInput {
+	width: 98%;
+	height: 30px;
+	font-size: 13pt;
+	border: none;
+	border-bottom: black solid 3px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+.joinBtn{
+	background-color: black;
+	border: none;
+	color: white;
+	width: 100%;
+	height: 35px;
+	font-weight: 900;
+}
+
+.birthSelect{
+	width: 20%;
+}
+#loginOKInfo{
+	color: white;
+}
+.joinTableTd{
+	position: relative;
+}
+.sub{
+	position: absolute;
+	top : 20px;
+	right: -54px;
+}
+
+

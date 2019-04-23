@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.twich.pf.member.MemberMapper">
+<insert id="memberJoin" parameterType="com.twich.pf.member.Member">
+	insert into project_member values(#{p_id}, #{p_pw}, #{p_name}, #{p_birth}, #{p_gender},#{p_adds}, #{p_img}, #{p_id_hint}, #{p_pw_hint})
+</insert>
+<select id="getMemberID" parameterType="com.twich.pf.member.Member" resultType="com.twich.pf.member.Member">
+	select * from project_member where p_id=#{p_id}
+</select>
+<update id="memberUpdate" parameterType="com.twich.pf.member.Member">
+	update project_MEMBER set p_pw=#{p_pw}, p_name=#{p_name}, p_adds=#{p_adds}, p_img=#{p_img}, p_id_hint=#{p_id_hint}, p_pw_hint=#{p_pw_hint} where p_id=#{p_id} 
+</update>
+<delete id="memberBye" parameterType="com.twich.pf.member.Member">
+	delete from project_member where p_id = #{p_id}
+</delete>
+
+</mapper>

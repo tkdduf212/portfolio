@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.twich.pf.sns.SnsMapper">
+<insert id="writeSNSMsg" parameterType="com.twich.pf.sns.SnsMsg">
+	insert into PROJECT_SNS values(PROJECT_sns_seq.nextval, #{ps_owner},#{ps_txt}, sysdate ,#{ps_color}, #{ps_img})
+</insert>
+
+<select id="getAllSnsMsgsCount" resultType="java.lang.Integer">
+		select count(*)	from PROJECT_sns, PROJECT_member where ps_owner = p_id
+</select>
+
+<select id="getSnsMsg" parameterType="com.twich.pf.sns.SnsMsgNo" resultType="com.twich.pf.sns.SnsMsg">
+	select * from PROJECT_sns where ps_no=#{ps_no}
+</select>
+
+<select id="getSnsMsgs" parameterType="com.twich.pf.sns.SnsMsgNo" resultType="com.twich.pf.sns.SnsMsg">
+	select * from (select rownum as rn, ps_no, ps_owner, ps_txt, ps_date, ps_color, ps_img,	p_name, p_img from (select * from PROJECT_sns, PROJECT_member where ps_owner = p_id order by ps_date)) where rn &lt;= #{start} and rn &gt;= #{end} order by rn desc
+</select>
+<update id="updateSnsMsg" parameterType="com.twich.pf.sns.SnsMsgNo">
+	update PROJECT_sns set ps_txt = #{ps_txt} where ps_no = #{ps_no}
+</update>
+<delete id="deleteSnsMsg" parameterType="com.twich.pf.sns.SnsMsgNo">
+	delete from PROJECT_sns where ps_no=#{ps_no}
+</delete>
+
+<insert id="writeSnsReply" parameterType="com.twich.pf.sns.SnsReply">
+	insert into PROJECT_sns_reply values(PROJECT_sns_reply_seq.nextval, #{psr_ps_no}, #{psr_owner}, #{psr_txt}, sysdate)
+</insert>
+
+<select id="getSnsReplys" parameterType="com.twich.pf.sns.SnsMsg" resultType="com.twich.pf.sns.SnsReply">
+	select * from PROJECT_sns_reply where psr_ps_no = #{ps_no} order by psr_date
+</select>
+<delete id="deleteSnsReply" parameterType="com.twich.pf.sns.SnsReply">
+	delete from PROJECT_sns_reply where psr_no=#{psr_no}
+</delete>
+</mapper>
