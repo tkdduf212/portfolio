@@ -68,7 +68,6 @@
 	</table>
 	
 
-
 	<c:forEach var="sm" items="${msgs }">
 		<table class="sm" style="border:${sm.ps_color} solid 3px;">
 			<tr>
