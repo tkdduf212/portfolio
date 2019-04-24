@@ -28,11 +28,10 @@ function connectIdCheckEvent() {
 			}, // {파라메터명:값, 파라메터명:값, ...}
 			success : function(data) {
 				if (data.member[0]) {
-					$("#joinIdOk").text("사용불가");
+					$("#joinIdOk").text("사용불가").css('color','red');
 				}else{
-					$("#joinIdOk").text("ok");
+					$("#joinIdOk").text("ok").css('color','green');
 				}
-				
 			}
 		});
 
@@ -40,17 +39,7 @@ function connectIdCheckEvent() {
 }
 
 function joinCheck() {
-	var p_id = document.joinForm.p_id;
-	var p_pw = document.joinForm.p_pw;
-	var p_pwChk = document.joinForm.p_pwChk;
-	var p_name = document.joinForm.p_name;
-	var p_gender = document.joinForm.p_gender;
-	var p_adds1 = document.joinForm.p_adds1;
-	var p_adds2 = document.joinForm.p_adds2;
-	var p_adds3 = document.joinForm.p_adds3;
-	var p_id_hint = document.joinForm.p_id_hint;
-	var p_pw_hint = document.joinForm.p_pw_hint;
-	var p_img = document.joinForm.p_img;
+	var p_id = document.joinForm.p_id; 	var p_pw = document.joinForm.p_pw;	var p_pwChk = document.joinForm.p_pwChk;	var p_name = document.joinForm.p_name;	var p_gender = document.joinForm.p_gender;	var p_adds1 = document.joinForm.p_adds1;	var p_adds2 = document.joinForm.p_adds2;	var p_adds3 = document.joinForm.p_adds3;	var p_id_hint = document.joinForm.p_id_hint;	var p_pw_hint = document.joinForm.p_pw_hint;	var p_img = document.joinForm.p_img;
 	if (isEmpty(p_id) || containsHS(p_id) || lessThan(p_id, 4)) {
 		alert("아이디 확인");
 		p_id.value = "";

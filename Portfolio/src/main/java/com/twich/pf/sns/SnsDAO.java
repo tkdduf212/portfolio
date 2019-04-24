@@ -181,6 +181,7 @@ public class SnsDAO {
 			req.setAttribute("r", "댓글 쓰기 실패");
 		}
 	}
+
 	public void deleteSnsReply(SnsReply sr, HttpServletRequest req, HttpServletResponse res){
 		try {
 			if (ss.getMapper(SnsMapper.class).deleteSnsReply(sr)==1) {

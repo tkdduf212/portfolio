@@ -1,7 +1,6 @@
 package com.twich.pf.member;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 public class Member {
 	private String p_id;

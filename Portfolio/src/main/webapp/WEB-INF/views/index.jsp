@@ -30,11 +30,11 @@
 		$("#findPage").click(function() {
 			location.href = "findPage";//페이지 구현 미정
 		});
-		connectIdCheckEvent()
-		connectSummonEventLogin()
-		connectSummonEvent()
-		connectSummonAddrInputEvent()
-		mainImgSlide()
+		connectIdCheckEvent();
+		connectSummonEventLogin();
+		connectSummonEvent();
+		connectSummonAddrInputEvent();
+		mainImgSlide();
 	});
 </script>
 </head>
@@ -43,7 +43,7 @@
 		<a href="/pf"><img width="30px" height="30px" src="resources/img/home_img.png"></a>
 		<a href="bbs"><img width="70px" height="30px" src="resources/img/community_img.png"></a>
 	</div>
-	<div id="mainHead">게시판</div>
+	<div id="mainHead">Portfolio</div>
 	<span id="loginSummon">
 		<img id="loginImg" src="resources/img/loginIcon.png">
 		<div id="loginArea">

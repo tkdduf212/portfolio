@@ -14,13 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 
-@Service
+@Repository
 public class MemberDAO {
 	@Autowired
 	private SqlSession ss;
@@ -258,10 +259,15 @@ public class MemberDAO {
 	}
 	
 	public Members idCheck(Member m, HttpServletRequest req, HttpServletResponse res){
-		Member dbM = ss.getMapper(MemberMapper.class).getMemberID(m);
-		ArrayList<Member> al =  new ArrayList<Member>();
-		al.add(dbM);
-		Members ms = new Members(al);
-		return ms;
+		try {
+			Member dbM = ss.getMapper(MemberMapper.class).getMemberID(m);
+			ArrayList<Member> al =  new ArrayList<Member>();
+			al.add(dbM);
+			Members ms = new Members(al);
+			return ms;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

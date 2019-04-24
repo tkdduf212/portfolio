@@ -50,8 +50,7 @@ public class MemberController {
 		}
 	}
 
-	@RequestMapping(value = "/member.id.check", method = RequestMethod.GET, 
-			produces = "application/json; charset=utf-8")
+	@RequestMapping(value = "/member.id.check", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
 	public @ResponseBody Members idCheck(Member m, HttpServletRequest req, HttpServletResponse res) {
 		return mDAO.idCheck(m, req, res);
 	}

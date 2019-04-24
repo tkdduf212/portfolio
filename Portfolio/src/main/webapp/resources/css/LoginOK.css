@@ -27,6 +27,13 @@
 	height: 74px;
 }
 
+#joinIdOk {
+	font-size: 13pt;
+	border: none;
+	font-weight: 700;
+	color: red;
+}
+
 .joinInput {
 	width: 98%;
 	height: 30px;
@@ -58,7 +65,7 @@
 .sub{
 	position: absolute;
 	top : 20px;
-	right: -54px;
+	right: -70px;
 }
 
 
